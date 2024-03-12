@@ -22,7 +22,7 @@ permissions: read-all
 jobs:
   build-and-push:
     #if: ${{ github.repository == 'cilium/hubble' }}
-    environment: ${{ (github.event_name == 'push' && !startsWith(github.ref_name, 'main')) && 'release' }}
+    environment: ${{ (github.event_name == 'push' && !startsWith(github.ref_name, 'mainxx')) && 'release' }}
     runs-on: ubuntu-22.04
     strategy:
       # matrix for easier code-sharing with workflows from cilium/cilium
