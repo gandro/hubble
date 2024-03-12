@@ -32,8 +32,11 @@ jobs:
             dockerfile: ./Dockerfile
 
     steps:
-      - name: Dump context
-        run: echo '${{ toJSON(job) }}'
+      - name: Determine deployment environment
+        run: |
+          echo '${{ toJson(github) }}'
+          #gh api ${{
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@0d103c3126aa41d772a8362f6aa67afac040f80c # v3.1.0
 
